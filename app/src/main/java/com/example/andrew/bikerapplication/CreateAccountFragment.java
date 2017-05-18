@@ -5,8 +5,13 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import java.util.UUID;
 
@@ -15,18 +20,111 @@ import java.util.UUID;
  */
 
 public class CreateAccountFragment extends Fragment {
-    private SQLiteDatabase mDatabase;
 
-    private User user;
-    private String password;
+    private static final String ARG_USER_ID = "user_id";
 
-    public static CreateAccountFragment newInstance(UUID crimeId) {
+    private User mUser;
+    private EditText mPasswordField;
+    private EditText mFirstNameField;
+    private EditText mLastNameField;
+    private EditText mLoginField;
+
+    public static CreateAccountFragment newInstance() {
         Bundle args = new Bundle();
-        args.putSerializable(ARG_CRIME_ID, crimeId);
+        //args.putSerializable(ARG_USER_ID, userID);
 
-        CrimeFragment fragment = new CrimeFragment();
+        CreateAccountFragment fragment = new CreateAccountFragment();
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        String userID = (String) getArguments().getSerializable(ARG_USER_ID);
+        mUser = User.get(getActivity());
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        View v = inflater.inflate(R.layout.fragment_create_account, container, false);
+
+
+        mLoginField = (EditText) v.findViewById(R.id.emailInput);
+        mLoginField.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mUser.setLogin(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        mFirstNameField = (EditText) v.findViewById(R.id.firstNameInput);
+        mFirstNameField.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mUser.setFirstName(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        mLastNameField = (EditText) v.findViewById(R.id.lastNameInput);
+        mLastNameField.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mUser.setLastName(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        mPasswordField = (EditText) v.findViewById(R.id.passwordInput);
+        mPasswordField.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mUser.setPassword(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+        return v;
     }
 
 
@@ -34,7 +132,7 @@ public class CreateAccountFragment extends Fragment {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_account);
+        setContentView(R.layout.fragment_create_account);
         Button submit = (Button)findViewById(R.id.submitLoginInfo);
 
         //Add lamda functions here to confirm user and retrieve their routes

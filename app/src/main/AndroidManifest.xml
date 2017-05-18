@@ -15,17 +15,17 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name=".TabActivity" >
+
+        <activity android:name=".FragmentPagerActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CreateAccountFragment"></activity>
-        <activity android:name=".CreateRouteFragment"></activity>
-        <activity android:name=".NewBikeRoute"></activity>
-        <activity android:name=".RouteListActivity"></activity>
+        <activity android:name=".RouteListActivity">
+
+        </activity>
     </application>
 
 </manifest>

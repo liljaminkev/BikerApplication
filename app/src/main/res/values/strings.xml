@@ -35,6 +35,10 @@
     <string name="ending_lat_hint">55.013</string>
 
 
+    <string name="user_tab">User</string>
+    <string name="route_tab">Route</string>
+
+
 
     <string name="done">Done</string>
 

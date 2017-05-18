@@ -3,7 +3,7 @@ package com.example.andrew.bikerapplication.database;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import com.example.andrew.bikerapplication.database.UserDbSchema;
+import com.example.andrew.bikerapplication.database.UserDbSchema.UserTable;
 
 /**
  * Created by kevinchan on 5/17/17.
@@ -21,8 +21,8 @@ public class UserBaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + UserTable.NAME + "(" +
                 " _id integer primary key autoincrement, " +
-                UserTable.Cols.UUID + ", " +
-                UserTable.Cols.TITLE + ", " +
+                UserTable.Cols.USERID + ", " +
+                UserTable.Cols.PASSWORD + ", " +
                 ")"
         );
     }

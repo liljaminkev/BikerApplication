@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import static com.example.andrew.bikerapplication.R.id.freq;
+
 /**
  * Created by kevinchan on 5/17/17.
  */
@@ -21,6 +23,16 @@ public class RouteListFragment extends Fragment {
 
     private List<Route> routeList;
     private RecyclerView mRouteRecyclerView;
+    private RouteAdapter mAdapter;
+
+    public static RouteListFragment newInstance() {
+        Bundle args = new Bundle();
+        //args.putSerializable(ARG_USER_ID, userID);
+
+        RouteListFragment fragment = new RouteListFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,16 +45,26 @@ public class RouteListFragment extends Fragment {
         View view = inflater.inflate(R.layout.route_list, container, false);
 
         mRouteRecyclerView = (RecyclerView) view
-                .findViewById(R.id.);
+                .findViewById(R.id.route_recycler_view);
         mRouteRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        if (savedInstanceState != null) {
-            mSubtitleVisible = savedInstanceState.getBoolean(SAVED_SUBTITLE_VISIBLE);
-        }
 
         updateUI();
 
         return view;
+    }
+
+    private void updateUI() {
+        RoutesHandler routesHandler = RoutesHandler.get(getActivity());
+        List<Route> crimes = routesHandler.getRoutes();
+
+        if (mAdapter == null) {
+            mAdapter = new RouteAdapter(crimes);
+            mRouteRecyclerView.setAdapter(mAdapter);
+        } else {
+            mAdapter.setRoutes(crimes);
+            mAdapter.notifyDataSetChanged();
+        }
     }
 
 
@@ -56,31 +78,26 @@ public class RouteListFragment extends Fragment {
         private TextView frequency;
 
 
-        public RouteHolder(View view) {
-            super(View.inflate(R.layout.list_item_route, parent, false));
+        public RouteHolder(LayoutInflater inflater, ViewGroup parent)  {
+            super(inflater.inflate(R.layout.list_item_route, parent, false));
 
-            routeName = (TextView) view.findViewById(R.id.routeName);
-            startLat = (TextView) view.findViewById(R.id.startLat);
-            startLong = (TextView) view.findViewById(R.id.startLong);
-            endLat = (TextView) view.findViewById(R.id.endLat);
-            endLong = (TextView) view.findViewById(R.id.endLong);
+            routeName = (TextView) itemView.findViewById(R.id.routeName);
+            startLat = (TextView) itemView.findViewById(R.id.startLat);
+            startLong = (TextView) itemView.findViewById(R.id.startLong);
+            endLat = (TextView) itemView.findViewById(R.id.endLat);
+            endLong = (TextView) itemView.findViewById(R.id.endLong);
 
-            final Button enlarge = (Button) view.findViewById(R.id.Go);
+            final Button enlarge = (Button) itemView.findViewById(R.id.Go);
 
             enlarge.setClickable(true);
             enlarge.setFocusableInTouchMode(true);
-            enlarge.setId(counter);
             enlarge.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //int index = v.getId();
-                    route = routeList.get(0);
-                    freq = Integer.parseInt(route.getFrequency());
-                    freq = freq + 1;
-                    Toast.makeText(enlarge.getContext(), "Route Name: " + route.getRouteName().toString() +
-                            "\nStart Lat: " + route.getStartLat().toString() + "\nStart Long: " +
-                            route.getStartLong().toString() + "\nEnd Lat: " + route.getEndLat().toString() +
-                            "\nEnd Long: " + route.getEndLong().toString() + "\nUsage: " +
+                    Toast.makeText(enlarge.getContext(), "Route Name: " + mRoute.getRouteName() +
+                            "\nStart Lat: " + mRoute.getStartLat() + "\nStart Long: " +
+                            mRoute.getStartLong() + "\nEnd Lat: " + mRoute.getEndLat() +
+                            "\nEnd Long: " + mRoute.getEndLong() + "\nUsage: " +
                             freq, Toast.LENGTH_LONG).show();
                 }
             });
@@ -106,7 +123,7 @@ public class RouteListFragment extends Fragment {
 
         @Override
         public RouteHolder onCreateViewHolder(ViewGroup parent, int viewType){
-            LayoutInflater layoutInflater = LayoutInflater.from(Activity());
+            LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
             return new RouteHolder(layoutInflater, parent);
         }
 

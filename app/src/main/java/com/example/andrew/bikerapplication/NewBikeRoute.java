@@ -21,7 +21,7 @@ public class NewBikeRoute extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_route);
+        setContentView(R.layout.fragment_create_route);
 
 
         Button orderButton = (Button)findViewById(R.id.submitRoute);
