@@ -2,21 +2,35 @@ package com.example.andrew.bikerapplication;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.Button;
+
+import java.util.UUID;
 
 /**
  * Created by Andrew on 5/13/2017.
  */
 
 public class CreateAccountFragment extends Fragment {
+    private SQLiteDatabase mDatabase;
 
     private User user;
     private String password;
 
+    public static CreateAccountFragment newInstance(UUID crimeId) {
+        Bundle args = new Bundle();
+        args.putSerializable(ARG_CRIME_ID, crimeId);
 
+        CrimeFragment fragment = new CrimeFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+
+    /*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +46,6 @@ public class CreateAccountFragment extends Fragment {
                 startActivity(intent);
             }
         });
-    }
+    }*/
 
 }
