@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">BikerApplication</string>
+    <string name="Route">Route Name: </string>
+    <string name="Start_Lat">Start Latitude: </string>
+    <string name="Start_Long">Start Longitude: </string>
+    <string name="End_Lat">End Latitude: </string>
+    <string name="End_Long">End Longitude: </string>
+    <string name="Frequency">Frequency: </string>
+    <string name="Go">Go </string>
+
+
+    <string name="New_Route">Enter new route </string>
+    <string name="error_dismiss">Dismiss Error</string>
+
+    //new User Layout Screen
+    <string name="email_login_label">Email Login</string>
+    <string name="enter_password_label">Enter Password</string>
+    <string name="first_name_label">First Name</string>
+    <string name="last_name_label">Last Name</string>
+    <string name="login_hint">Enter Email Address</string>
+    <string name="first_name_hint">Enter First Name</string>
+    <string name="last_name_hint">Enter Last Name</string>
+    <string name="password_hint">Enter Password</string>
+
+    //new Route Layout Strings
+    <string name="route_name_label">Route Name</string>
+    <string name="starting_latitude">Starting Latitude</string>
+    <string name="starting_longitude">Starting Longitude</string>
+    <string name="ending_latitude">Ending Latitude</string>
+    <string name="ending_longitude">Ending Longitude</string>
+    <string name="route_name_hint">My Route Name</string>
+    <string name="starting_lat_hint">55.012</string>
+    <string name="starting_long_hint">123.0</string>
+    <string name="ending_long_hint">123.1</string>
+    <string name="ending_lat_hint">55.013</string>
+
+
+
+    <string name="done">Done</string>
+
+</resources>

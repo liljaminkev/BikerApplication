@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="8dp"
+        >
+
+        <TextView
+            android:id="@+id/rName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Route"
+            android:textColor="@color/title"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="67dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/routeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/rName"
+            android:layout_weight="1"
+            android:textColor="@color/info"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="282dp"
+        android:layout_height="17dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteY="26dp"
+        tools:layout_editor_absoluteX="94dp">
+
+        <TextView
+            android:id="@+id/sLat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rName"
+            android:layout_weight="1"
+            android:text="@string/Start_Lat"
+            android:textColor="@color/title"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="67dp"
+            tools:layout_editor_absoluteY="90dp" />
+
+        <TextView
+            android:id="@+id/startLat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/routeName"
+            android:layout_toRightOf="@id/sLat"
+            android:textColor="@color/info"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="283dp"
+        android:layout_height="18dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteY="44dp"
+        tools:layout_editor_absoluteX="93dp">
+
+        <TextView
+            android:id="@+id/sLong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sLat"
+            android:layout_weight="1"
+            android:text="@string/Start_Long"
+            android:textColor="@color/title"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="67dp"
+            tools:layout_editor_absoluteY="161dp" />
+
+        <TextView
+            android:id="@+id/startLong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/startLat"
+            android:layout_toRightOf="@id/sLong"
+            android:textColor="@color/info"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="368dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteY="116dp"
+        tools:layout_editor_absoluteX="154dp">
+
+        <TextView
+            android:id="@+id/eLat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sLong"
+            android:layout_weight="1"
+            android:text="@string/End_Lat"
+            android:textColor="@color/title"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="212dp"
+            tools:layout_editor_absoluteY="90dp" />
+
+        <TextView
+            android:id="@+id/endLat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/startLong"
+            android:layout_toRightOf="@id/eLat"
+            android:textColor="@color/info"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="368dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteY="58dp"
+        tools:layout_editor_absoluteX="121dp">
+
+        <TextView
+            android:id="@+id/eLong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/eLat"
+            android:layout_weight="1"
+            android:text="@string/End_Long"
+            android:textColor="@color/title"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="154dp"
+            tools:layout_editor_absoluteY="64dp" />
+
+        <TextView
+            android:id="@+id/endLong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/endLat"
+            android:layout_toRightOf="@id/eLong"
+            android:layout_weight="1"
+            android:textColor="@color/info"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="368dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteY="100dp"
+        tools:layout_editor_absoluteX="172dp">
+
+        <TextView
+            android:id="@+id/freq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/eLong"
+            android:layout_weight="1"
+            android:text="@string/Frequency"
+            android:textColor="@color/title"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="212dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/frequency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/endLong"
+            android:layout_toRightOf="@id/freq"
+            android:textColor="@color/info"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/Go"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/yellow"
+        android:text="@string/Go"/>
+
+</android.support.constraint.ConstraintLayout>

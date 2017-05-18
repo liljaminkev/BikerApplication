@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/route_name_label"
+        style="?android:listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/route_name_label" />
+
+    <EditText
+        android:id="@+id/route_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/route_name_hint"/>
+
+    <TextView
+        android:id="@+id/start_latitude_label"
+        style="?android:listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/starting_latitude" />
+
+    <EditText
+        android:id="@+id/start_latitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/starting_lat_hint"/>
+
+    <TextView
+        android:id="@+id/start_longitude_label"
+        style="?android:listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/starting_longitude"/>
+
+    <EditText
+        android:id="@+id/start_longitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/starting_long_hint"/>
+
+    <TextView
+        android:id="@+id/end_latitude_label"
+        style="?android:listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ending_latitude" />
+
+    <EditText
+        android:id="@+id/end_latitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ending_long_hint"/>
+
+    <TextView
+        android:id="@+id/end_longitude_label"
+        style="?android:listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ending_longitude"/>
+
+
+    <EditText
+        android:id="@+id/end_longitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ending_long_hint"/>
+
+    <Button
+        android:id="@+id/submitRoute"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/done" />
+
+
+
+
+
+</LinearLayout>
